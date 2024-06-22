@@ -24,7 +24,7 @@
       "id": "dht1",
       "top": -220.5,
       "left": 167.4,
-      "attrs": { "temperature": "27", "humidity": "36" }
+      "attrs": { "temperature": "38.7", "humidity": "36" }
     },
     {
       "type": "wokwi-ds1307",
@@ -77,13 +77,6 @@
       "left": -246.8,
       "rotate": 180,
       "attrs": {}
-    },
-    {
-      "type": "wokwi-pushbutton-6mm",
-      "id": "btn2",
-      "top": -146.2,
-      "left": 105.6,
-      "attrs": { "color": "blue", "key": "2" }
     }
   ],
   "connections": [
@@ -127,9 +120,7 @@
     [ "btn1:1.l", "servo2:GND", "black", [ "h-67.2", "v-57.6" ] ],
     [ "btn1:2.r", "nano:9", "purple", [ "h0" ] ],
     [ "servo1:PWM", "nano:12", "orange", [ "h67.2", "v-48.2", "h28.8" ] ],
-    [ "nano:12", "servo2:PWM", "orange", [ "v-4.8", "h-48.5", "v-124.8" ] ],
-    [ "nano:3", "btn2:2.l", "purple", [ "v0" ] ],
-    [ "btn2:1.r", "relay2:GND", "black", [ "v0", "h10.4", "v76.8" ] ]
+    [ "nano:12", "servo2:PWM", "orange", [ "v-4.8", "h-48.5", "v-124.8" ] ]
   ],
   "dependencies": {}
 }
