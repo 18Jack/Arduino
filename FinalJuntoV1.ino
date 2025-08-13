@@ -6,7 +6,7 @@
 // ---------------- HARDWARE ----------------
 #define DIR_PIN    3
 #define STEP_PIN   4
-#define MOTOR_TYPE 1   // usado por AccelStepper en tu ejemplo previo
+#define MOTOR_TYPE 1   // usado por AccelStepper
 
 #define OLED_ALTO       64
 #define OLED_ANCHO      128
@@ -23,7 +23,6 @@ const int   PPR = 32;            // pulsos por vuelta por canal del encoder
 const int   COUNTS_PER_PULSE = 2; // usamos CHANGE en A -> 2 counts por pulso "A"
 const float MM_PER_COUNT = (PI * DIAMETRO_MM) / (PPR * COUNTS_PER_PULSE);
 
-// Debounce (ajusta a 0 si encoder óptico)
 const unsigned long DEBOUNCE_US = 1500; // 1000 µs = 1 ms (prueba 0 si hay pérdida)
 
 // Intervalo de muestreo/actualización
@@ -131,7 +130,6 @@ void loop() {
 
     // OLED: limpiar y pintar
     oled.clearDisplay();
-    // oled.drawRect(0, 0, OLED_ANCHO, OLED_ALTO, WHITE);
 
     oled.setTextSize(1);
     oled.setCursor(4, 4);
@@ -140,7 +138,7 @@ void loop() {
     oled.setTextSize(2);
     oled.setCursor(4, 14);
     oled.print(distTotal_mm, 1);
-    oled.println(" mm"); // el println avanza línea, ok para texto pequeño
+    oled.println(" mm"); 
 
     // Mostrar último intervalo y raw pulses
     oled.setTextSize(1);
@@ -156,5 +154,5 @@ void loop() {
     lastPrint = now;
   }
 
-  // aquí puedes añadir otras tareas sin bloquear
+  // aquí añadir otras tareas sin bloquear
 }
